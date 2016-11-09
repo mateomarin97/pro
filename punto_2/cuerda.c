@@ -29,15 +29,19 @@ int main(){
   /*Ahora ejecuto leapfrog*/
   leapfrog(y,v);
   /*Imprimo los datos*/
-  for(i=0;i<dimy;i++){
-    if(i%dimv==999){
-      printf("%f \n",y[i]);
-    }
-    else{
-      printf("%f ",y[i]);
+  int k;
+  for(k=0;k<(dimy/dimv);k++){
+    if(k%1000==0){
+      for(i=0;i<dimv;i++){
+	if(i%dimv==999){
+	  printf("%f \n",y[(k*dimv)+i]);
+	}
+	else{
+	  printf("%f ",y[(k*dimv)+i]);
+	}
+      }
     }
   }
-  
   
   return 0;
 }
